@@ -1,8 +1,16 @@
+/*
+ * @Descripttion: setting
+ * @version: 1.0
+ * @Author: wenchao.chai
+ * @Date: 2020-11-11 21:00:06
+ * @LastEditors: wenchao.chai
+ * @LastEditTime: 2020-11-12 22:13:16
+ */
 module.exports = {
   /**
    * @description 网站标题
    */
-  title: 'EL-ADMIN',
+  title: 'BZHI2-ADMIN',
   /**
    * @description 是否显示 tagsView
    */
@@ -38,7 +46,7 @@ module.exports = {
   /**
    * 是否显示设置的底部信息
    */
-  showFooter: true,
+  showFooter: false,
   /**
    * 底部文字，支持html语法
    */
