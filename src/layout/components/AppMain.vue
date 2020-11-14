@@ -1,7 +1,19 @@
+<!--
+ * @Descripttion: vue文件
+ * @version: 1.0
+ * @Author: wenchao.chai
+ * @Date: 2020-11-11 21:00:06
+ * @LastEditors: wenchao.chai
+ * @LastEditTime: 2020-11-14 20:54:45
+-->
 <template>
   <section class="app-main">
     <transition name="fade-transform" mode="out-in">
-      <keep-alive :include="cachedViews">
+      <!-- <keep-alive :include="cachedViews">
+        <router-view :key="key" />
+      </keep-alive> -->
+       <!-- <keep-alive :include="cachedViews"> -->
+      <keep-alive>
         <router-view :key="key" />
       </keep-alive>
     </transition>

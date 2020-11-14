@@ -68,7 +68,34 @@ const mutations = {
         break
       }
     }
-  }
+  },
+
+  /**
+   * @name: 设置当前的tagview 属性 is_current
+   * @param {type} 
+   * @return: 
+   * @other: 
+   */
+  SET_CURRENT_REFRESH_VIEW: (state, view) => {
+    for (let v of state.visitedViews) {
+      if (v.path === view.path) {
+        v.is_current = true;
+      }else{
+        v.is_current = false;
+      }
+    }
+  },
+  /**
+   * @name: 刷新完后恢复tagview 属性 is_current
+   * @param {type} 
+   * @return: 
+   * @other: 
+   */
+  RESTORE_CURRENT_REFRESH_VIEW: (state) => {
+    for (let v of state.visitedViews) {
+       v.is_current = false;
+    }
+  },
 }
 
 const actions = {
@@ -106,7 +133,7 @@ const actions = {
     })
   },
 
-  delOthersViews({ dispatch, state }, view) {
+  delOthersViews({ dispatch, state }, view) {  
     return new Promise(resolve => {
       dispatch('delOthersVisitedViews', view)
       dispatch('delOthersCachedViews', view)
@@ -154,7 +181,16 @@ const actions = {
 
   updateVisitedView({ commit }, view) {
     commit('UPDATE_VISITED_VIEW', view)
+  },
+
+  setCurrentRefreshView({ commit }, view) {
+    commit('SET_CURRENT_REFRESH_VIEW', view)
+  },
+
+  restoreCurrentRefreshView({ commit }) {
+    commit('RESTORE_CURRENT_REFRESH_VIEW')
   }
+   
 }
 
 export default {

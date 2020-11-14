@@ -1,3 +1,11 @@
+/*
+ * @Descripttion: vue文件
+ * @version: 1.0
+ * @Author: wenchao.chai
+ * @Date: 2020-11-11 21:00:06
+ * @LastEditors: wenchao.chai
+ * @LastEditTime: 2020-11-13 22:08:27
+ */
 import Vue from 'vue'
 import Router from 'vue-router'
 import Layout from '../layout/index'
@@ -62,7 +70,7 @@ export const constantRouterMap = [
 
 export default new Router({
   // mode: 'hash',
-  mode: 'history',
+  // mode: 'history',
   scrollBehavior: () => ({ y: 0 }),
   routes: constantRouterMap
 })

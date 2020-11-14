@@ -17,7 +17,7 @@
       </router-link>
     </scroll-pane>
     <ul v-show="visible" :style="{left:left+'px',top:top+'px'}" class="contextmenu">
-      <li @click="refreshSelectedTag(selectedTag)">刷新</li>
+      <li @click="refreshTag(selectedTag)">刷新</li>
       <li v-if="!(selectedTag.meta&&selectedTag.meta.affix)" @click="closeSelectedTag(selectedTag)">关闭</li>
       <li @click="closeOthersTags">关闭其他</li>
       <li @click="closeAllTags(selectedTag)">关闭全部</li>
@@ -129,6 +129,27 @@ export default {
             path: '/redirect' + fullPath
           })
         })
+      })
+    },
+    /**
+     * @name: tag上的更新
+     * @param {type} 
+     * @return: 
+     * @other: 
+     */
+    refreshTag(view){ 
+      //version 0.2
+      this.$store.dispatch('tagsView/setCurrentRefreshView',view).then(() => {
+         //再打开tag
+        const { fullPath } = view 
+          this.$nextTick(() => {
+            this.$router.replace({
+              path: '/redirect' + fullPath
+            })
+             this.$nextTick(() => {
+                this.$store.dispatch('tagsView/restoreCurrentRefreshView')
+             })
+          }) 
       })
     },
     closeSelectedTag(view) {
