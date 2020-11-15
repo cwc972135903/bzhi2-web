@@ -9,14 +9,20 @@
 
 
 <template>
-    <div class="el-table_header">
-      <div class="el-table_title" v-if="title != ''">
-          <svg-icon :icon-class="iconClass" v-if="iconClass"/>
-          <span>{{title}}</span>
-      </div>
-      <div class="el-table_toolbar">
-         <slot/>
-      </div>
+  <div class="el-table_header">
+    <div
+      v-if="title != ''"
+      class="el-table_title"
+    >
+      <svg-icon
+        v-if="iconClass"
+        :icon-class="iconClass"
+      />
+      <span>{{ title }}</span>
+    </div>
+    <div class="el-table_toolbar">
+      <slot />
+    </div>
   </div>
 </template>
 
@@ -24,6 +30,7 @@
 import waves from "@/directive/waves"; // Waves directive
 export default {
   name: "TableHeader",
+  directives: { waves },
   props: {   
     /**
      * @name: title text
@@ -42,7 +49,6 @@ export default {
       }
     }
   },
-  directives: { waves },
   data() {
     return { 
  
@@ -51,10 +57,10 @@ export default {
   computed: { 
      
   },
-  mounted() {  
-  },
   watch: {
      
+  },
+  mounted() {  
   },
   updated() {
      

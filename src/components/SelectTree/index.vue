@@ -13,13 +13,40 @@
  -->
 
 <template>  
-  <el-select ref="select" v-model="valueSelected" :placeholder="placeholder" :clearable="clearable" :disabled="disabled" :filterable="filterable"
-    :filter-method="filterMethod" @clear="clear">
-    <el-option v-for="item in options" :key="item.id" :label="item.label" :value="item.id" hidden></el-option>
-    <el-option value label>
-      <el-tree ref="selectTree" :accordion="accordion" :data="data" :node-key="props.value" :current-node-key="valueSelected"
-        :default-expanded-keys="defaultExpandedKeys" :props="props" :render-content="renderContent" :filter-node-method="filterNode"
-        :expand-on-click-node="expandOnClickNode" @node-click="handleNodeClick"></el-tree>
+  <el-select
+    ref="select"
+    v-model="valueSelected"
+    :placeholder="placeholder"
+    :clearable="clearable"
+    :disabled="disabled"
+    :filterable="filterable"
+    :filter-method="filterMethod"
+    @clear="clear"
+  >
+    <el-option
+      v-for="item in options"
+      :key="item.id"
+      :label="item.label"
+      :value="item.id"
+      hidden
+    />
+    <el-option
+      value
+      label
+    >
+      <el-tree
+        ref="selectTree"
+        :accordion="accordion"
+        :data="data"
+        :node-key="props.value"
+        :current-node-key="valueSelected"
+        :default-expanded-keys="defaultExpandedKeys"
+        :props="props"
+        :render-content="renderContent"
+        :filter-node-method="filterNode"
+        :expand-on-click-node="expandOnClickNode"
+        @node-click="handleNodeClick"
+      />
     </el-option>
   </el-select> 
 </template>

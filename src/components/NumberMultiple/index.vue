@@ -8,12 +8,21 @@
 --> 
 
 <template>
-    <!-- <div> -->
-        <!-- <el-button @click="test">test</el-button> -->
-        <el-input-number v-model="number" :size="size" :precision="precision" :step="step" :min="min"
-        :max="max" :disabled="disabled"
-        :placeholder="placeholder" :controls-position="controlsPosition" :controls="controls"></el-input-number>
-    <!-- </div> -->
+  <!-- <div> -->
+  <!-- <el-button @click="test">test</el-button> -->
+  <el-input-number
+    v-model="number"
+    :size="size"
+    :precision="precision"
+    :step="step"
+    :min="min"
+    :max="max"
+    :disabled="disabled"
+    :placeholder="placeholder"
+    :controls-position="controlsPosition"
+    :controls="controls"
+  />
+  <!-- </div> -->
 </template>
 <script>
 import { percentFormat,multipleFormat } from "@/utils/numberHelper";

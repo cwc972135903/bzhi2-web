@@ -25,10 +25,29 @@
       :before-upload="handleBeforeUpload"
       :file-list="fileList"
       :limit="limit"
-      :auto-upload="false">
-      <el-button slot="trigger" size="small" type="primary">选取文件</el-button>
-      <el-button style="margin-left: 10px;" size="small" type="success" @click="submitUpload">上传到服务器</el-button>
-      <div slot="tip" class="el-upload__tip">{{ tip }} {{ appendTip }}</div>
+      :auto-upload="false"
+    >
+      <el-button
+        slot="trigger"
+        size="small"
+        type="primary"
+      >
+        选取文件
+      </el-button>
+      <el-button
+        style="margin-left: 10px;"
+        size="small"
+        type="success"
+        @click="submitUpload"
+      >
+        上传到服务器
+      </el-button>
+      <div
+        slot="tip"
+        class="el-upload__tip"
+      >
+        {{ tip }} {{ appendTip }}
+      </div>
       <!-- <el-button @click="test">test</el-button> -->
     </el-upload>
   </div>

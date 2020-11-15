@@ -54,7 +54,7 @@ const commonValidator = {
      * @name: 是否手机号码或者固话 
      */
     validatePhoneTwo:(rule,value,callback) => {
-     const reg = /^((\d{2,6}-\d{5,10})|(\d{5,10})|(1[34578]\d{9}))$/;;
+     const reg = /^((\d{2,6}-\d{5,10})|(\d{5,10})|(1[34578]\d{9}))$/;
       if (value == '' || value == undefined || value == null) {
         callback();
       } else {

@@ -313,7 +313,7 @@ export function replaceSpecChar(param) {
     param = param.replace(/</g, '&lt;');
     param = param.replace(/>/g, '&gt;');
     return param;
-};
+}
 
 /**
  * 科学计算法转换

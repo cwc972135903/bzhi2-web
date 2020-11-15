@@ -8,19 +8,28 @@
 -->
 <template>
   <section class="app-main">
-    <transition name="fade-transform" mode="out-in">
+    <transition
+      name="fade-transform"
+      mode="out-in"
+    >
       <!-- <keep-alive :include="cachedViews">
         <router-view :key="key" />
       </keep-alive> -->
-       <!-- <keep-alive :include="cachedViews"> -->
+      <!-- <keep-alive :include="cachedViews"> -->
       <keep-alive>
         <router-view :key="key" />
       </keep-alive>
     </transition>
-    <div v-if="$store.state.settings.showFooter" id="el-main-footer">
+    <div
+      v-if="$store.state.settings.showFooter"
+      id="el-main-footer"
+    >
       <span v-html="$store.state.settings.footerTxt" />
       <span> ⋅ </span>
-      <a href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank">{{ $store.state.settings.caseNumber }}</a>
+      <a
+        href="https://beian.miit.gov.cn/#/Integrated/index"
+        target="_blank"
+      >{{ $store.state.settings.caseNumber }}</a>
     </div>
   </section>
 </template>

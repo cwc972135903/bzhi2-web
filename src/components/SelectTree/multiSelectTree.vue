@@ -8,18 +8,46 @@
  -->
 
 <template> 
-    <el-select ref="selectInput" v-model="valueSelected" multiple :collapse-tags="collapseTags" :placeholder="placeholder" :disabled="disabled"
-      :filterable="filterable" :filter-method="filterMethod" @remove-tag="handleRemoveTag">
-      <el-option v-for="item in options" :key="item.id" :label="item.label" :value="item.id" hidden></el-option>
+  <el-select
+    ref="selectInput"
+    v-model="valueSelected"
+    multiple
+    :collapse-tags="collapseTags"
+    :placeholder="placeholder"
+    :disabled="disabled"
+    :filterable="filterable"
+    :filter-method="filterMethod"
+    @remove-tag="handleRemoveTag"
+  >
+    <el-option
+      v-for="item in options"
+      :key="item.id"
+      :label="item.label"
+      :value="item.id"
+      hidden
+    />
 
-      <el-option value label>
-        <el-tree ref="selectTree" :data="dataSource" show-checkbox :node-key="props.value" :default-expanded-keys="valueSelected"
-          :default-checked-keys="valueSelected" :props="props" :check-on-click-node="checkOnClickNode" :render-content="renderContent"
-          :check-strictly="checkStrictly" :expand-on-click-node="expandOnClickNode" :filter-node-method="filterNode"
-          @check-change="handleCheckChange">
-        </el-tree>
-      </el-option>
-    </el-select> 
+    <el-option
+      value
+      label
+    >
+      <el-tree
+        ref="selectTree"
+        :data="dataSource"
+        show-checkbox
+        :node-key="props.value"
+        :default-expanded-keys="valueSelected"
+        :default-checked-keys="valueSelected"
+        :props="props"
+        :check-on-click-node="checkOnClickNode"
+        :render-content="renderContent"
+        :check-strictly="checkStrictly"
+        :expand-on-click-node="expandOnClickNode"
+        :filter-node-method="filterNode"
+        @check-change="handleCheckChange"
+      />
+    </el-option>
+  </el-select> 
 </template>
 
 <script>
